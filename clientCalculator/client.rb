@@ -23,8 +23,11 @@ def process_argv(option, num1, num2)
     case option
         when "-h"
         puts "This is the help menu."
-        puts "  -v Enable verbose mode"
-        puts "  -c Enable syntax highlighting"
+        puts "Example: [command] num1 num2"
+        puts "  --sum sum two numbers"
+        puts "  --substract substract two numbers"
+        puts "  --division divide two numbers"
+        puts "  --multiply multiply two numbers"
         exit
         when "--sum"
             result = client.Sum(num1.to_f, num2.to_f)
