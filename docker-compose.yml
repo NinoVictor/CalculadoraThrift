@@ -1,20 +1,6 @@
 version: '3.4'
 
 services:
-    server:
-        build:
-            context: .
-            dockerfile: ./serverCalculator/Dockerfile
-        network_mode: host
-        expose:
-            - "9090"
-        ports:
-            - "0.0.0.0:9090:9090"
-        volumes:
-            - ./server:/server
-        stdin_open: true
-        tty: true
-        
     client:
         build:
             context: .
@@ -24,8 +10,20 @@ services:
             - "8080"
         ports:
             - "0.0.0.0:8080:8080"
-        volumes:
-            - ./client:/client
         stdin_open: true
         tty: true
+
+    server:
+        build:
+            context: .
+            dockerfile: ./serverCalculator/Dockerfile
+        network_mode: host
+        expose:
+            - "9090"
+        ports:
+            - "0.0.0.0:9090:9090"
+        stdin_open: true
+        tty: true
+    
+    
             
