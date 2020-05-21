@@ -7,7 +7,7 @@ services:
             dockerfile: ./serverCalculator/Dockerfile
         network_mode: host
         expose:
-            - "8080"
+            - "9090"
         ports:
             - "0.0.0.0:9090:9090"
         volumes:
